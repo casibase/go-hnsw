@@ -1,0 +1,21 @@
+{
+  "name": "go-hnsw",
+  "version": "0.0.0-development",
+  "main": "index.js",
+  "repository": "git@github.com:yehong-z/go-hnsw.git",
+  "author": "yehong <239859435@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "global": "^4.4.0",
+    "semantic-release-cli": "^5.4.4"
+  },
+  "scripts": {
+    "semantic-release": "semantic-release"
+  },
+  "devDependencies": {
+    "semantic-release": "^22.0.0"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  }
+}

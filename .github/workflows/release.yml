@@ -1,0 +1,25 @@
+name: Release
+on:
+  push:
+    branches:
+      - master
+jobs:
+  release-and-push:
+    name: Release And Push
+    runs-on: ubuntu-latest
+    # if: github.repository == 'casdoor/casdoor' && github.event_name == 'push'
+    # needs: [ frontend, backend, linter, e2e ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: -1
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Release
+        run: yarn global add semantic-release@17.4.4 && semantic-release
+        env:
+          GH_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
